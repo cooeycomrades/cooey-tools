@@ -9,3 +9,7 @@ List of great repositories that are maintained and owned elsewhere.
 ### Cyber
 
 Cybersecurity powershell things...
+
+### Office-365
+
+Office 365 related scripts...
