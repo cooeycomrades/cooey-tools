@@ -1,12 +1,12 @@
-################################################
+#################################################################################################################
 #
 # Author: Matt Carson 
 # Contact: https://github.com/mattco593
 # Title: Office 365 Group Creators
-# Purpose: Limit the amount of users that are able to create Microsoft/Office 365 accounts without any oversight. 
+# Purpose: Limit the amount of users that are able to create Microsoft/Office 365 groups without any oversight. 
 #
 #
-################################################
+################################################################################################################
 
 $GroupName = "Office 365 Group Creators"
 $AllowGroupCreation = "False"
