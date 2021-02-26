@@ -1,3 +1,10 @@
+<#
+Author: @garrett-wood
+Purpose: To be run in a PowerShell Azure Function to remove unnecessarily assigned licenses without wasting admin time.
+Usage: Intended to be loaded in Azure Function. You wild need to create a custom Service Principal with the right API permissions
+on the MS Graph (out of scope for this guide)
+#>
+
 # In this example, all licenses are assigned with groups, and credentials are passed through the Azure Function using Application Settings.
 # In the example environment, the naming convention for these groups is "License-$licensename" and the E3 and E5 groups are not handled here.
 
