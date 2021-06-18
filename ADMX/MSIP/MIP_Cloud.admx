@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+ <policyNamespaces>
+    <target prefix="MSIP" namespace="Cooey.MSIP>" />
+    <using prefix="Cooey" namespace="Cooey.Policies.Common" />
+	<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+ </policyNamespaces>
+ <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CloudEnvironment" displayName="$(string.CloudEnvironmentDisplay)">
+	<parentCategory ref="Cooey" />
+	</category>
+  </categories>
+  <policies>
+
+   <policy name="WebServiceUrl" class="Machine" displayName="$(string.WebServiceUrl)" explainText="$(string.WebServiceUrl_Help)" presentation="$(presentation.WebServiceUrl)" key="SOFTWARE\WOW6432Node\Microsoft\MSIP">
+    <parentCategory ref="CloudEnvironment" />
+     <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+     <elements>
+        <text id="WebServiceUrl" valueName="WebServiceUrl" required="true" />
+     </elements>
+   </policy>
+
+   <policy name="CloudEnvType" class="Machine" displayName="$(string.CloudEnvType)" explainText="$(string.CloudEnvType_Help)" presentation="$(presentation.CloudEnvType)" key="SOFTWARE\WOW6432Node\Microsoft\MSIP">
+      <parentCategory ref="CloudEnvironment" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="CloudEnvType" valueName="CloudEnvType">
+          <item displayName="$(string.Commercial)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.GCC)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.GCC_High)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.DoD)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	
+  </policies>
+</policyDefinitions>
