@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  HID Global -->
+<policyDefinitions	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					revision="710.1" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="activclient" namespace="HIDGlobal.Policies.HIDGlobal.ActivClient" />
+		<using prefix="hidglobal" namespace="HIDGlobal.Policies.HIDGlobal" />
+	</policyNamespaces>
+	<!--  Define every superseeded ADM/ADMX -->
+	<supersededAdm fileName="ActivClient.adm" />						<!--  Delivered with ActivClient 6.2 -->
+	<supersededAdm fileName="ActivClient.admx" />						<!--  Delivered with ActivClient 6.2 -->
+	<supersededAdm fileName="ActivIdentity.ActivClient.admx" />			<!--  Delivered with ActivClient 7.0.x -->
+	<!--  Define minimum required ADML revision  -->
+	<resources minRequiredRevision="710.1" />
+	<supportedOn>
+		<definitions>
+			<definition name="SUPPORTED_AC70_GENERIC" displayName="$(string.SUPPORTED_AC70_GENERIC)"/>
+			<definition name="SUPPORTED_AC71_FROM_WINDOWS8" displayName="$(string.SUPPORTED_AC71_FROM_WINDOWS8)"/>
+			<definition name="SUPPORTED_AC71_BELOW_WINDOWS8" displayName="$(string.SUPPORTED_AC71_BELOW_WINDOWS8)"/>
+		</definitions>
+	</supportedOn>
+	<categories>
+		<!--  Root category  -->
+		<category name="CAT_ActivClient" displayName="$(string.category_displayName_ActivClient)" >
+			<parentCategory ref="hidglobal:CAT_HIDGlobal" />
+		</category>
+		<!--  Sub-categories  -->
+		<category name="CertificateAvailability" displayName="$(string.category_displayName_CertificateAvailability)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="LogonWindow" displayName="$(string.category_displayName_LogonWindow)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="NotificationAreaIcon" displayName="$(string.category_displayName_NotificationAreaIcon)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="NotificationsManagement" displayName="$(string.category_displayName_NotificationsManagement)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="OutlookEnhancements" displayName="$(string.category_displayName_OutlookEnhancements)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="PinCaching" displayName="$(string.category_displayName_PinCaching)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="PinInitTool" displayName="$(string.category_displayName_PinInitTool)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="PinManagement" displayName="$(string.category_displayName_PinManagement)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="SmartCard" displayName="$(string.category_displayName_SmartCard)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="SmartCardAutoUpdate" displayName="$(string.category_displayName_SmartCardAutoUpdate)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="SmartCardReaders" displayName="$(string.category_displayName_SmartCardReaders)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="SoftwareAutoUpdate" displayName="$(string.category_displayName_SoftwareAutoUpdate)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+		<category name="UserConsole" displayName="$(string.category_displayName_UserConsole)" >
+			<parentCategory ref="CAT_ActivClient" />
+		</category>
+	</categories>
+   <policies>
+   
+		<!--  Sub-category CertificateAvailability -->
+		<policy name="AutoConfigEFS" class="Machine" displayName="$(string.policy_displayName_AutoConfigEFS)" explainText="$(string.policy_explainText_AutoConfigEFS)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration"
+				valueName="AutoConfigEFSOff">
+				<parentCategory ref="CertificateAvailability" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="AutoUnRegOnLogOff" class="Machine" displayName="$(string.policy_displayName_AutoUnRegOnLogOff)" explainText="$(string.policy_explainText_AutoUnRegOnLogOff)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration"
+				valueName="AutoUnRegOnLogOff">
+				<parentCategory ref="CertificateAvailability" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="AutoUnRegOnRemove" class="Machine" displayName="$(string.policy_displayName_AutoUnRegOnRemove)" explainText="$(string.policy_explainText_AutoUnRegOnRemove)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration"
+				valueName="AutoUnRegOnRemove">
+				<parentCategory ref="CertificateAvailability" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="EnableReplaceCertDisplay" class="Machine" displayName="$(string.policy_displayName_EnableReplaceCertDisplay)" explainText="$(string.policy_explainText_EnableReplaceCertDisplay)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration"
+				valueName="EnableReplaceCertDisplay">
+				<parentCategory ref="CertificateAvailability" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<!--  Sub-category Logging -->
+		<policy name="LoggingEnabled" class="Machine" displayName="$(string.policy_displayName_LoggingEnabled)" explainText="$(string.policy_explainText_LoggingEnabled)"
+				key="SOFTWARE\HID Global\Logging\Products\ActivClient"
+				valueName="Enabled">
+				<parentCategory ref="hidglobal:CAT_Logging" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="EnableWindowsPKILoginProfiling" class="Machine" displayName="$(string.policy_displayName_EnableWindowsPKILoginProfiling)" explainText="$(string.policy_explainText_EnableWindowsPKILoginProfiling)"
+				key="SOFTWARE\Policies\HID Global\Logging"
+				valueName="ActivClientEnableWindowsPKILoginProfiling">
+				<parentCategory ref="hidglobal:CAT_Logging" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<!--  Sub-category LogonWindow -->
+		<policy name="BannerHiRes" class="Machine" displayName="$(string.policy_displayName_BannerHiRes)" explainText="$(string.policy_explainText_BannerHiRes)"
+				key="SOFTWARE\Policies\HID Global\SecurityModuleMW\AuthenticationDialog"
+				presentation="$(presentation.policy_presentation_BannerHiRes)">
+				<parentCategory ref="LogonWindow" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<text id="idBannerHiRes" valueName="BannerHiRes" required="true" />
+				</elements>
+		</policy>
+		
+		<!--  Sub-category NotificationAreaIcon -->
+		<policy name="OTPClipboardTimeOut" class="Machine" displayName="$(string.policy_displayName_OTPClipboardTimeOut)" explainText="$(string.policy_explainText_OTPClipboardTimeOut)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="DisableOTPClipboard"
+				presentation="$(presentation.policy_presentation_OTPClipboardTimeOut)">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="0" /> </enabledValue>
+				<disabledValue> <decimal value="1" /> </disabledValue>
+				<elements>
+					<decimal id="idOTPClipboardTimeOut" valueName="OTPClipboardTimeOut" required="true" />
+				</elements>
+		</policy>
+		
+		<policy name="OTPWindowTimeout" class="Machine" displayName="$(string.policy_displayName_OTPWindowTimeout)" explainText="$(string.policy_explainText_OTPWindowTimeout)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="HideOTPWindow"
+				presentation="$(presentation.policy_presentation_OTPWindowTimeout)">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="0" /> </enabledValue>
+				<disabledValue> <decimal value="1" /> </disabledValue>
+				<elements>
+					<decimal id="idOTPWindowTimeout" valueName="OTPWindowTimeout" required="true" minValue="1" />
+				</elements>
+		</policy>
+		
+		<policy name="HideGetOTP" class="Machine" displayName="$(string.policy_displayName_HideGetOTP)" explainText="$(string.policy_explainText_HideGetOTP)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="HideGetOTP">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="HideOpenUserConsole" class="Machine" displayName="$(string.policy_displayName_HideOpenUserConsole)" explainText="$(string.policy_explainText_HideOpenUserConsole)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="HideOpenUserConsole">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="HideInitPIN" class="Machine" displayName="$(string.policy_displayName_HideInitPIN)" explainText="$(string.policy_explainText_HideInitPIN)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="HideInitPIN">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="HideAdvancedDiagnostics" class="Machine" displayName="$(string.policy_displayName_HideAdvancedDiagnostics)" explainText="$(string.policy_explainText_HideAdvancedDiagnostics)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="HideAdvancedDiagnostics">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="HideIcon" class="Machine" displayName="$(string.policy_displayName_HideIcon)" explainText="$(string.policy_explainText_HideIcon)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\SmartCardAgent"
+				valueName="HideIcon">
+				<parentCategory ref="NotificationAreaIcon" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<!--  Sub-category NotificationsManagement -->
+		<policy name="CardAutoUpdateWarningDuration" class="Machine" displayName="$(string.policy_displayName_CardAutoUpdateWarningDuration)" explainText="$(string.policy_explainText_CardAutoUpdateWarningDuration)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardAutoUpdateWarning"
+				presentation="$(presentation.policy_presentation_CardAutoUpdateWarningDuration)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<decimal id="idDuration" valueName="Duration" required="true" minValue="1"  />
+				</elements>
+		</policy>
+		
+		<policy name="CardAutoUpdateWarningMessage" class="Machine" displayName="$(string.policy_displayName_CardAutoUpdateWarningMessage)" explainText="$(string.policy_explainText_CardAutoUpdateWarningMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardAutoUpdateWarning"
+				presentation="$(presentation.policy_presentation_CardAutoUpdateWarningMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_BELOW_WINDOWS8" />
+				<elements>
+					<text id="idCardAutoUpdateWarningMessage" valueName="Message" required="true" maxLength="243" />
+				</elements>
+		</policy>
+		
+		<policy name="CardAutoUpdateWarningToastMessage" class="Machine" displayName="$(string.policy_displayName_CardAutoUpdateWarningToastMessage)" explainText="$(string.policy_explainText_CardAutoUpdateWarningToastMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardAutoUpdateWarning"
+				presentation="$(presentation.policy_presentation_CardAutoUpdateWarningToastMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idCardAutoUpdateWarningToastMessage" valueName="ToastMessage" required="true" maxLength="60" />
+				</elements>
+		</policy>
+		
+		<policy name="CardAutoUpdateWarningToastTitle" class="Machine" displayName="$(string.policy_displayName_CardAutoUpdateWarningToastTitle)" explainText="$(string.policy_explainText_CardAutoUpdateWarningToastTitle)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardAutoUpdateWarning"
+				presentation="$(presentation.policy_presentation_CardAutoUpdateWarningToastTitle)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idCardAutoUpdateWarningToastTitle" valueName="ToastTitle" required="true" maxLength="40" />
+				</elements>
+		</policy>
+		
+		<policy name="HideBlockedCardManager" class="Machine" displayName="$(string.policy_displayName_HideBlockedCardManager)" explainText="$(string.policy_explainText_HideBlockedCardManager)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\BlockedCardManager"
+				valueName="HideBlockedCardManager">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="BlockedCardManagerMessage" class="Machine" displayName="$(string.policy_displayName_BlockedCardManagerMessage)" explainText="$(string.policy_explainText_BlockedCardManagerMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\BlockedCardManager"
+				presentation="$(presentation.policy_presentation_BlockedCardManagerMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_BELOW_WINDOWS8" />
+				<elements>
+					<text id="idBlockedCardManagerMessage" valueName="BlockedCardManagerMessage" required="true" maxLength="243" />
+				</elements>
+		</policy>
+		
+		<policy name="BlockedCardManagerToastMessage" class="Machine" displayName="$(string.policy_displayName_BlockedCardManagerToastMessage)" explainText="$(string.policy_explainText_BlockedCardManagerToastMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\BlockedCardManager"
+				presentation="$(presentation.policy_presentation_BlockedCardManagerToastMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idBlockedCardManagerToastMessage" valueName="BlockedCardManagerToastMessage" required="true" maxLength="60"/>
+				</elements>
+		</policy>
+		
+		<policy name="BlockedCardManagerToastTitle" class="Machine" displayName="$(string.policy_displayName_BlockedCardManagerToastTitle)" explainText="$(string.policy_explainText_BlockedCardManagerToastTitle)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\BlockedCardManager"
+				presentation="$(presentation.policy_presentation_BlockedCardManagerToastTitle)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idBlockedCardManagerToastTitle" valueName="BlockedCardManagerToastTitle" required="true" maxLength="40"/>
+				</elements>
+		</policy>
+		
+		<policy name="LockedCardMessage" class="Machine" displayName="$(string.policy_displayName_LockedCardMessage)" explainText="$(string.policy_explainText_LockedCardMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications"
+				presentation="$(presentation.policy_presentation_LockedCardMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_BELOW_WINDOWS8" />
+				<elements>
+					<text id="idLockedCardMessage" valueName="CardLockedMessage" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="LockedCardToastMessage" class="Machine" displayName="$(string.policy_displayName_LockedCardToastMessage)" explainText="$(string.policy_explainText_LockedCardToastMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications"
+				presentation="$(presentation.policy_presentation_LockedCardToastMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idLockedCardToastMessage" valueName="CardLockedToastMessage" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="LockedCardToastTitle" class="Machine" displayName="$(string.policy_displayName_LockedCardToastTitle)" explainText="$(string.policy_explainText_LockedCardToastTitle)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications"
+				presentation="$(presentation.policy_presentation_LockedCardToastTitle)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idLockedCardToastTitle" valueName="CardLockedToastTitle" required="true" />
+				</elements>
+		</policy>
+		
+		<policy name="CardValidityCheckDelay" class="Machine" displayName="$(string.policy_displayName_CardValidityCheckDelay)" explainText="$(string.policy_explainText_CardValidityCheckDelay)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardValidity"
+				presentation="$(presentation.policy_presentation_CardValidityCheckDelay)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<decimal id="idValidityCheckDelay" valueName="ValidityCheckDelay" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="CardValidityExpirationNotificationPeriod" class="Machine" displayName="$(string.policy_displayName_CardValidityExpirationNotificationPeriod)" explainText="$(string.policy_explainText_CardValidityExpirationNotificationPeriod)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardValidity"
+				presentation="$(presentation.policy_presentation_CardValidityExpirationNotificationPeriod)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<decimal id="idExpirationNotificationPeriod" valueName="ExpirationNotificationPeriod" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="CardValidityCheckSentence" class="Machine" displayName="$(string.policy_displayName_CardValidityCheckSentence)" explainText="$(string.policy_explainText_CardValidityCheckSentence)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardValidity"
+				presentation="$(presentation.policy_presentation_CardValidityCheckSentence)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<text id="idValidityCheckSentence" valueName="ValidityCheckSentence" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="CardValidityCheckPeriod" class="Machine" displayName="$(string.policy_displayName_CardValidityCheckPeriod)" explainText="$(string.policy_explainText_CardValidityCheckPeriod)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardValidity"
+				presentation="$(presentation.policy_presentation_CardValidityCheckPeriod)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<decimal id="idValidityCheckPeriod" valueName="ValidityCheckPeriod" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="CardValidityEnableCardValidityCheck" class="Machine" displayName="$(string.policy_displayName_CardValidityEnableCardValidityCheck)" explainText="$(string.policy_explainText_CardValidityEnableCardValidityCheck)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CardValidity"
+				valueName="EnableCardValidityCheck">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+
+		<policy name="CertificateValidityEnableCertificatesValidityCheck" class="Machine" displayName="$(string.policy_displayName_CertificateValidityEnableCertificatesValidityCheck)" explainText="$(string.policy_explainText_CertificateValidityEnableCertificatesValidityCheck)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\CertificateValidity"
+				valueName="EnableCertificatesValidityCheck">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+
+		<policy name="DisableNoReaderWarning" class="Machine" displayName="$(string.policy_displayName_DisableNoReaderWarning)" explainText="$(string.policy_explainText_DisableNoReaderWarning)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\NoReaderWarning"
+				valueName="Disable">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+
+		<policy name="EnableSmartCardPresenceWarning" class="Machine" displayName="$(string.policy_displayName_EnableSmartCardPresenceWarning)" explainText="$(string.policy_explainText_EnableSmartCardPresenceWarning)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\SmartCardPresenceWarning"
+				presentation="$(presentation.policy_presentation_EnableSmartCardPresenceWarning)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<enum id="idEnable" valueName="Enable" required="true">
+						<item displayName="$(string.NotificationsManagement_Never)">
+						  <value> <decimal value="0" /> </value>
+						</item>
+						<item displayName="$(string.NotificationsManagement_LogoffLock)">
+						  <value> <decimal value="1" /> </value>
+						</item>
+						<item displayName="$(string.NotificationsManagement_Logoff)">
+						  <value> <decimal value="2" /> </value>
+						</item>
+					</enum>
+				</elements>
+		</policy>
+		
+		<policy name="AudioFilePath" class="Machine" displayName="$(string.policy_displayName_AudioFilePath)" explainText="$(string.policy_explainText_AudioFilePath)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\SmartCardPresenceWarning"
+				presentation="$(presentation.policy_presentation_AudioFilePath)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<text id="idAudioFilePath" valueName="AudioFile" required="true" />
+				</elements>
+		</policy>
+
+		<policy name="NoReaderWarningDuration" class="Machine" displayName="$(string.policy_displayName_NoReaderWarningDuration)" explainText="$(string.policy_explainText_NoReaderWarningDuration)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\NoReaderWarning"
+				presentation="$(presentation.policy_presentation_NoReaderWarningDuration)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<decimal id="idDuration" valueName="Duration" required="true" minValue="1" />
+				</elements>
+		</policy>
+
+		<policy name="NoReaderWarningMessage" class="Machine" displayName="$(string.policy_displayName_NoReaderWarningMessage)" explainText="$(string.policy_explainText_NoReaderWarningMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\NoReaderWarning"
+				presentation="$(presentation.policy_presentation_NoReaderWarningMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_BELOW_WINDOWS8" />
+				<elements>
+					<text id="idMessage" valueName="Message" required="true" maxLength="243" />
+				</elements>
+		</policy>
+		
+		<policy name="NoReaderWarningToastMessage" class="Machine" displayName="$(string.policy_displayName_NoReaderWarningToastMessage)" explainText="$(string.policy_explainText_NoReaderWarningToastMessage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\NoReaderWarning"
+				presentation="$(presentation.policy_presentation_NoReaderWarningToastMessage)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idToastMessage" valueName="ToastMessage" required="true" maxLength="60" />
+				</elements>
+		</policy>
+		
+		<policy name="NoReaderWarningToastTitle" class="Machine" displayName="$(string.policy_displayName_NoReaderWarningToastTitle)" explainText="$(string.policy_explainText_NoReaderWarningToastTitle)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications\NoReaderWarning"
+				presentation="$(presentation.policy_presentation_NoReaderWarningToastTitle)">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC71_FROM_WINDOWS8" />
+				<elements>
+					<text id="idToastTitle" valueName="ToastTitle" required="true" maxLength="40" />
+				</elements>
+		</policy>
+		
+		<policy name="DisplayInitCard" class="Machine" displayName="$(string.policy_displayName_DisplayInitCard)" explainText="$(string.policy_explainText_DisplayInitCard)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications"
+				valueName="DisplayInitCard">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="DisableUnlockDlgOnLockedCardInserted" class="Machine" displayName="$(string.policy_displayName_DisableUnlockDlgOnLockedCardInserted)" explainText="$(string.policy_explainText_DisableUnlockDlgOnLockedCardInserted)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\Notifications"
+				valueName="DisableUnlockDlgOnLockedCardInserted">
+				<parentCategory ref="NotificationsManagement" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<!--  Sub-category OutlookEnhancements -->
+		<policy name="AllowNameMismatch" class="Machine" displayName="$(string.policy_displayName_AllowNameMismatch)" explainText="$(string.policy_explainText_AllowNameMismatch)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				valueName="AllowNameMismatch">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="DisableAutoRegOutlook" class="Machine" displayName="$(string.policy_displayName_DisableAutoRegOutlook)" explainText="$(string.policy_explainText_DisableAutoRegOutlook)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				valueName="DisableAutoRegOutlook">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="AutoContactAddOff" class="Machine" displayName="$(string.policy_displayName_AutoContactAddOff)" explainText="$(string.policy_explainText_AutoContactAddOff)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				valueName="AutoContactAddOff">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="AutoDecrypt" class="Machine" displayName="$(string.policy_displayName_AutoDecrypt)" explainText="$(string.policy_explainText_AutoDecrypt)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				valueName="AutoDecrypt">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="PublishToGal" class="Machine" displayName="$(string.policy_displayName_PublishToGal)" explainText="$(string.policy_explainText_PublishToGal)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				valueName="PublishToGal">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+		
+		<policy name="CRLCheck" class="Machine" displayName="$(string.policy_displayName_CRLCheck)" explainText="$(string.policy_explainText_CRLCheck)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				presentation="$(presentation.policy_presentation_CRLCheck)">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<enum id="idCRLCheck" valueName="CRLCheck" required="true">
+						<item displayName="$(string.CRLCheck_Disabled)">
+						  <value> <decimal value="0" /> </value>
+						</item>
+						<item displayName="$(string.CRLCheck_EnabledEnforced)">
+						  <value> <decimal value="1" /> </value>
+						</item>
+						<item displayName="$(string.CRLCheck_Enabled)">
+						  <value> <decimal value="2" /> </value>
+						</item>
+					</enum>
+				</elements>
+		</policy>
+		
+		<policy name="CRLCheckTimeout" class="Machine" displayName="$(string.policy_displayName_CRLCheckTimeout)" explainText="$(string.policy_explainText_CRLCheckTimeout)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				presentation="$(presentation.policy_presentation_CRLCheckTimeout)">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<decimal id="idCRLCheckTimeout" valueName="CRLCheckTimeout" required="true" minValue="0" maxValue="50000" />
+				</elements>
+		</policy>
+		
+		<policy name="AuditAutoConfiguration" class="Machine" displayName="$(string.policy_displayName_AuditAutoConfiguration)" explainText="$(string.policy_explainText_AuditAutoConfiguration)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				valueName="AuditAutoConfiguration">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<enabledValue> <decimal value="1" /> </enabledValue>
+				<disabledValue> <decimal value="0" /> </disabledValue>
+		</policy>
+				
+		<policy name="AutoContactStorage" class="Machine" displayName="$(string.policy_displayName_AutoContactStorage)" explainText="$(string.policy_explainText_AutoContactStorage)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				presentation="$(presentation.policy_presentation_AutoContactStorage)">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<text id="idAutoContactStorage" valueName="AutoContactStorage" required="true" />
+				</elements>
+		</policy>
+		
+		<policy name="HashAlgorithm" class="Machine" displayName="$(string.policy_displayName_HashAlgorithm)" explainText="$(string.policy_explainText_HashAlgorithm)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				presentation="$(presentation.policy_presentation_HashAlgorithm)">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<enum id="idHashAlgorithm" valueName="HashAlgorithm" required="true">
+						<item displayName="$(string.HashAlgorithm_MD5)">
+						  <value> <string>MD5</string> </value>
+						</item>
+						<item displayName="$(string.HashAlgorithm_SHA1)">
+						  <value> <string>SHA1</string> </value>
+						</item>
+						<item displayName="$(string.HashAlgorithm_SHA256)">
+						  <value> <string>SHA256</string> </value>
+						</item>
+						<item displayName="$(string.HashAlgorithm_SHA384)">
+						  <value> <string>SHA384</string> </value>
+						</item>
+						<item displayName="$(string.HashAlgorithm_SHA512)">
+						  <value> <string>SHA512</string> </value>
+						</item>
+					</enum>
+				</elements>
+		</policy>
+		
+		<policy name="EncryptionAlgorithm" class="Machine" displayName="$(string.policy_displayName_EncryptionAlgorithm)" explainText="$(string.policy_explainText_EncryptionAlgorithm)"
+				key="SOFTWARE\Policies\HID Global\ActivClient\CertificateRegistration\Outlook"
+				presentation="$(presentation.policy_presentation_EncryptionAlgorithm)">
+				<parentCategory ref="OutlookEnhancements" />
+				<supportedOn ref="SUPPORTED_AC70_GENERIC" />
+				<elements>
+					<enum id="idEncryptionAlgorithm" valueName="EncryptionAlgorithm" required="true">
+						<item displayName="$(string.EncryptionAlgorithm_3DES)">
+						  <value> <string>3DES</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_AES128)">
+						  <value> <string>AES (128-bit)</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_AES192)">
+						  <value> <string>AES (192-bit)</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_AES256)">
+						  <value> <string>AES (256-bit)</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_DES)">
+						  <value> <string>DES</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_RC240)">
+						  <value> <string>RC2 (40-bit)</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_RC264)">
+						  <value> <string>RC2 (64-bit)</string> </value>
+						</item>
+						<item displayName="$(string.EncryptionAlgorithm_RC2128)">
+						  <value> <string>RC2 (128-bit)</string> </value>
+						</item>
+					</enum>
+				</elements>
+		</policy>
+				
+	</policies>
+</policyDefinitions>
