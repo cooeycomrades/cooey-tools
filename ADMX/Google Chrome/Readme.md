@@ -24,8 +24,7 @@ While there are a number of configurations that can be done this document will o
 # Details:
 
 ### MicrosoftExtensions
-Configures the force install list for Google Chrome in order to install the Microsoft Accounts extension and Microsoft Defender extension. The Microsoft Accounts extension is required for Google Chrome to report the device state to Azure AD to be used for conditional access policies. More information can be found [here](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-conditions#chrome-support)
+Configures the force install list for Google Chrome in order to install the Windows 10 Accounts extension and Microsoft Defender extension. The Windows 10 Accounts extension is required for Google Chrome to report the device state to Azure AD to be used for conditional access policies. More information can be found [here](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-conditions#chrome-support)
 
 
-## Author
-@alally
+
