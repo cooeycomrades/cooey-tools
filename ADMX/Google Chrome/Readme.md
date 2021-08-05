@@ -33,9 +33,9 @@ The settings within the MicrosoftExtensions.xml file are generic, they do not re
 This sample includes Microsoft specific extensions but you can modify the `<data>` node to include additional extensions to install through the following process. 
 
 1) Open the extension within the Chrome webstore to discover the extension ID
-2) Review the browser URL for the Extension ID 
-Below is the Defender URL, the extension ID is located at the end of the URL and is `bkbeeeffjjeopflfhgeknacdieedcoml`. The `?hl=en` is not part of the ID 
-https://chrome.google.com/webstore/detail/microsoft-defender-browse/bkbeeeffjjeopflfhgeknacdieedcoml?hl=en. 
+2) Review the browser URL for the Extension ID.
+https://chrome.google.com/webstore/detail/microsoft-defender-browse/bkbeeeffjjeopflfhgeknacdieedcoml?hl=en is the Defender URL, the extension ID is located at the end of the URL and is `bkbeeeffjjeopflfhgeknacdieedcoml`. The `?hl=en` is not part of the ID 
+
 3) Append `&#xF000;3&#xF000;<extensionid>;https://clients2.google.com/service/update2/crx` to the value replacing `<extensionid>` with the ID you retrieve from the step 2
 4) You can continue this to add additional ones increasing the 3 to 4 and so on as you add additional extensions
 
