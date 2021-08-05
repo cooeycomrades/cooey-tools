@@ -24,7 +24,19 @@ While there are a number of configurations that can be done this document will o
 # Details:
 
 ### MicrosoftExtensions
-Configures the force install list for Google Chrome in order to install the Windows 10 Accounts extension and Microsoft Defender extension. The Windows 10 Accounts extension is required for Google Chrome to report the device state to Azure AD to be used for conditional access policies. More information can be found [here](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-conditions#chrome-support)
+Contains the values required to configure the Chrome [ExtensionInstallForceList](https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist) so that the Windows 10 Accounts and Microsoft Defender extensions are automatically installed from the Chrome public marketplace.
 
+The format of the data within the file follows standard conventions and starts with an `<enabled/>` node to enable the settings. That is followed by a `<data>` node to list out the settings value. The format for the value property is `<incrementing number>&#xF000;<Chrome Extension ID>;<Update URL>`. In this specific file we are installing two extensions, the first one with the incrementing number of 1 is the [Windows Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji?hl=en) extension which has an ID of `ppnbnpeolgkicgegkbkbjmhlideopiji`. The second extension is the [Microsoft Defender](https://chrome.google.com/webstore/detail/microsoft-defender-browse/bkbeeeffjjeopflfhgeknacdieedcoml?hl=en) extension which has an ID of `bkbeeeffjjeopflfhgeknacdieedcoml`. The update URL is a common URL if installing from the public Chrome Webstore `https://clients2.google.com/service/update2/crx`. 
+
+The settings within the MicrosoftExtensions.xml file are generic, they do not require modification and can be deployed as is to tenants within Commercial, GCC and GCC-H in order to ensure the Windows 10 Accounts extension is installed so users using Chrome will support device based conditional access policies
+
+This sample includes Microsoft specific extensions but you can modify the `<data>` node to include additional extensions to install through the following process. 
+
+1) Open the extension within the Chrome webstore to discover the extension ID
+2) Review the browser URL for the Extension ID 
+Below is the Windows 10 Accounts URL, the bold text is the Extension ID
+https://chrome.google.com/webstore/detail/microsoft-defender-browse/**bkbeeeffjjeopflfhgeknacdieedcoml**?hl=en. 
+3) Append `&#xF000;3&#xF000;<extensionid>;https://clients2.google.com/service/update2/crx` to the value replacing `<extensionid>` with the ID you retrieve from the step 2
+4) You can continue this to add additional ones increasing the 3 to 4 and so on as you add additional extensions
 
 
