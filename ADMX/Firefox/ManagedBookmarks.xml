@@ -1,0 +1,106 @@
+<enabled/>
+<data id="JSON" value='[
+  {
+    "toplevel_name": "Corporate"
+  },
+  {
+    "url": "https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm",
+    "name": "Single Sign On Portal - AD FS"
+  },
+  {
+    "url": "https://myapplications.azure.us/",
+    "name": "Single Sign On Portal - Azure AD"
+  },
+  {
+    "name": "Common Applications",
+    "children": [
+      {
+        "url": "https://account.activedirectory.windowsazure.us/signin/Application Name/guidguid-guid-guid-guid-guidguidguid?tenantId=guidguid-guid-guid-guid-guidguidguid",
+        "name": "Application Name"
+      },
+      {
+        "url": "https://contoso.freshservice.com/",
+        "name": "FreshService IT Support"
+      },
+      {
+        "url": "https://timesheet.contoso.com/",
+        "name": "Timesheets"
+      }
+    ]
+  },
+  {
+    "name": "Microsoft 365",
+    "children": [
+      {
+        "url": "https://portal.manage.microsoft.us/",
+        "name": "Device Manager"
+      },
+      {
+        "url": "https://forms.osi.office365.us/",
+        "name": "Forms"
+      },
+      {
+        "url": "https://outlook.office365.us/mail/",
+        "name": "Outlook"
+      },
+      {
+        "url": "https://tasks.office365.us/",
+        "name": "Planner"
+      },
+      {
+        "url": "https://portal.office365.us/",
+        "name": "Portal"
+      },
+      {
+        "url": "https://high.flow.microsoft.us/",
+        "name": "Power Automate / Flow"
+      },
+      {
+        "url": "https://make.high.powerapps.us/",
+        "name": "Power Apps"
+      },
+      {
+        "url": "https://app.high.powerbigov.us/",
+        "name": "Power BI"
+      },
+      {
+        "url": "https://scc.office365.us/quarantine",
+        "name": "Quarantine"
+      },
+      {
+        "url": "https://intelligentwaves.sharepoint.us/",
+        "name": "SharePoint"
+      },
+      {
+        "url": "https://gov.teams.microsoft.us/_",
+        "name": "Teams"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "children": [
+      {
+        "url": "https://www.facebook.com/",
+        "name": "Facebook"
+      },
+      {
+        "url": "https://www.linkedin.com/",
+        "name": "LinkedIn"
+      }
+    ]
+  },
+  {
+    "name": "Other Applications",
+    "children": [
+      {
+        "url": "https://contoso.account.box.com/login",
+        "name": "Box"
+      },
+      {
+        "url": "https://contoso.privilegecloud.cyberark.com/",
+        "name": "CyberArk Privilege Cloud"
+      }
+    ]
+  }
+]'/>
