@@ -1,6 +1,8 @@
 # Overview
 
-The Firefox policies are extremely well documented and also located in Github. Please reference those for the latest information. 
+The Firefox policies are extremely well documented and also located in Github. Please reference those for the latest information. See 
+
+https://github.com/mozilla/policy-templates
 
 # Process
 
