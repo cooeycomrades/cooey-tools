@@ -1,0 +1,28 @@
+<enabled/>
+<data id="ExtensionSettings" value='
+{
+  "*": {
+    "blocked_install_message": "\nThis extension is not approved. Please contact the Service Desk for assistance.",
+    "installation_mode": "blocked"
+  },
+  "extension1@contoso.com": {
+    "installation_mode": "force_installed",
+    "install_url": "https://firefox.addons.contoso.com/files/extension1.xpi"
+  },
+  "@testpilot-containers": {
+    "installation_mode": "normal-installed",
+    "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi"
+  },
+  "{35ab4090-7438-4a2f-94c6-f43aff24b770}": {
+    "installation_mode": "allowed"
+  },
+"support@lastpass.com": {
+    "installation_mode": "allowed"
+  },
+  "{2faa6adf-08f5-418f-b6cf-b303bb71d2f1}": {
+    "installation_mode": "blocked"
+  },
+  "web2pdfextension.17@acrobat.adobe.com": {
+    "installation_mode": "allowed"
+  }
+}'/>
