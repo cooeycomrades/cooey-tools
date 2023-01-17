@@ -1,6 +1,6 @@
-<# List-Exchange-Connected-Devices.ps1
+<# 
 .SYNOPSIS
-    List Exchange Connected Devices. 
+    List Exchange Connected Devices.
 
 .DESCRIPTION 
     This was designed to show you all of the devices that are connected to your M365 Exchange environment which aren't listed in the MDM\MAM web portals.
@@ -16,23 +16,16 @@
     https://github.com/A9G-Data-Droid/cooey-tools/tree/main/scripts/powershell/Office-365/Exchange
 #>
 
-#Requires -Modules ExchangeOnlineManagement
-#Requires -Version 5
 
 
-
-<#
-.SYNOPSIS
-    Connect-Exchange-Stateful
-
-.DESCRIPTION
-    Connect & Login to Exchange Online (MFA). Won't reconnect if already connected
-#>
 function Connect-Exchange-Stateful {
     if (!(Get-PSSession | Where-Object {$_.Name -match 'ExchangeOnline' -and $_.Availability -eq 'Available'})) { 
         Connect-ExchangeOnline -ExchangeEnvironmentName O365USGovGCCHigh -ShowBanner:$False
     }
 }
+
+#Requires -Modules ExchangeOnlineManagement
+#Requires -Version 5
 
 Connect-Exchange-Stateful
 Get-MobileDevice | Format-Table -Auto Identity, FriendlyName, DeviceOS, DeviceId
