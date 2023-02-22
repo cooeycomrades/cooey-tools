@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="CloudEnvironmentDisplay">Microsoft Information Protection</string>
+      <string id="CloudEnvType">AIP apps configuration for the unified labeling client</string>
+      <string id="CloudEnvType_Help">Relevant for: The AIP unified labeling client only. If your tenant is in the Microsoft 365 Commercial environment, you do not need to set this policy.</string>
+      <string id="Commercial">Microsoft 365 Commercial</string>
+      <string id="GCC">Microsoft 365 GCC</string>
+      <string id="GCC_High">Microsoft 365 GCC High</string>
+      <string id="DoD">Microsoft 365 DoD</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="CloudEnvType"><dropdownList refId="CloudEnvType">Cloud Environment Type</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
